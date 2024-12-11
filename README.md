@@ -154,3 +154,12 @@ $Ids = (Get-MgDevice –All).Id; foreach($i in $Ids){ (Get-MgDeviceRegisteredUse
 ```powershell
 $Ids = (Get-MgDevice –All).Id; foreach($i in $Ids){ (Get-MgDeviceRegisteredUser -DeviceId $i).AdditionalProperties.userPrincipalName}
 ```
+Filtrar solo aquellos dispositivos que son cuentan con las políticas de cumplimiento (aquellos cuyo campo *IsCompliant* es *True*).
+```powershell
+Get-MgDevice -All| ?{$_.IsCompliant -eq "True"} | fl *
+```
+Listar los dispositivos que pertencen y los registrados por un usuario.
+```powershell
+(Get-MgUserOwnedDevice -userId usuario@correo.com).AdditionalProperties
+(Get-MgUserRegisteredDevice -userId usuario@correo.com).AdditionalProperties
+```
