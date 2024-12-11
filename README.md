@@ -158,8 +158,11 @@ Filtrar solo aquellos dispositivos que son cuentan con las políticas de cumplim
 ```powershell
 Get-MgDevice -All| ?{$_.IsCompliant -eq "True"} | fl *
 ```
-Listar los dispositivos que pertencen y los registrados por un usuario.
+Listar los dispositivos que pertencen un usuario.
 ```powershell
 (Get-MgUserOwnedDevice -userId usuario@correo.com).AdditionalProperties
+```
+Listar los dispositivos registrados por un usuario.
+```powershell
 (Get-MgUserRegisteredDevice -userId usuario@correo.com).AdditionalProperties
 ```
