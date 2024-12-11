@@ -293,3 +293,36 @@ Listar los miembros de un grupo
 ```powershell
 Get-AzADGroupMember -ObjectId <Id>
 ```
+## App
+
+Obtener las aplicaciones registradas en el *Tenant* actual
+```powershell
+Get-AzADApplication
+```
+Obtener detalles de una aplicación específica
+```powershell
+Get-AzADApplication -ObjectId <Id>
+```
+Obtener detalle de una aplicación que conincide con una palabra
+```powershell
+Get-AzADApplication | ?{$_.DisplayName -match "app"}
+```
+Obtiener todas las aplicaciones y filtra aquellas que tienen credenciales asociadas.
+```powershell
+Get-AzADApplication | %{if(Get-AzADAppCredential -ObjectID $_.ID){$_}}
+```
+
+## *Service Principals*
+
+Obtener los *Service Principal*
+```powershell
+Get-AzADServicePrincipal
+```
+Obtener los *Service Principal* por *id*
+```powershell
+Get-AzADServicePrincipal -ObjectId <Id>
+```
+Obtener los *Service Principal* por nombre
+```powershell
+Get-AzADServicePrincipal | ?{$_.DisplayName -match "app"}
+```
