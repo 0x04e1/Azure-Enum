@@ -166,3 +166,61 @@ Listar los dispositivos registrados por un usuario.
 ```powershell
 (Get-MgUserRegisteredDevice -userId usuario@correo.com).AdditionalProperties
 ```
+## Apps
+
+Obtener todas las aplicaciones
+```powershell
+Get-MgApplication -All
+```
+Obtener el detalle de una aplicación
+```powershell
+Get-MgApplicationByAppId -AppId <AppId> | fl *
+```
+Detalle de una aplicación, en donde se encuentre la palabra 'app'
+```powershell
+Get-MgApplication -All | ?{$_.DisplayName -match "app"}
+```
+ Listar las aplicaciones que tienen configuradas credenciales de tipo contraseña
+ ```powershell
+ Get-MgApplication -All| ?{$_.PasswordCredentials -ne $null}
+```
+Obtener el dueño de una aplicación
+ ```powershell
+(Get-MgApplicationOwner -ApplicationId <Id>).AdditionalProperties.userPrincipalName
+ ```
+Obtener aplicaciones en las que un usuario tiene un rol (no se muestra el rol exacto)
+```powershell
+Get-MgUserAppRoleAssignment -UserId usuario@correo.com | fl *
+```
+Obtener aplicaciones donde un grupo tiene un rol (no se muestra el rol exacto)
+```powershell
+Get-MgGroupAppRoleAssignment -GroupId <GroupId> | fl *
+```
+Obtener los *Service Principal*
+```powershell
+Get-MgServicePrincipal -All
+```
+Obtener los *Service Principal* por *id*
+```powershell
+Get-MgServicePrincipal -ServicePrincipalId <Id> | fl *
+```
+Obtener los *Service Principal* por nombre
+```powershell
+Get-MgServicePrincipal –All | ?{$_.DisplayName -match "app"}
+```
+Enumere todos los *Service Principal* con una contraseña de aplicación
+```powershell
+Get-MgServicePrincipal –All | ?{$_.KeyCredentials -ne $null}
+```
+Obtener el dueño de un *Service Principal*
+```powershell
+(Get-MgServicePrincipalOwner -ServicePrincipalId <Id>).AdditionalProperties.userPrincipalName
+```
+Obtener los objetos (como aplicaciones, grupos, etc.) que están asociados o pertenecen al *Service Principal* especificad
+```powershell
+Get-MgServicePrincipalOwnedObject -ServicePrincipalId <Id>
+```
+Obtener objetos creados por un *Service Principal*
+```powershell
+Get-MgServicePrincipalCreatedObject -ServicePrincipalId <Id>
+```
