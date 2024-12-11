@@ -224,3 +224,7 @@ Obtener objetos creados por un *Service Principal*
 ```powershell
 Get-MgServicePrincipalCreatedObject -ServicePrincipalId <Id>
 ```
+Obtener los grupos o roles de EntraId de los que es miembro un S*Service Principal* específico.
+```powershell
+Get-MgServicePrincipalMemberOf -ServicePrincipalId <Id> | fl *
+```
