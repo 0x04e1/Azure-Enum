@@ -228,3 +228,17 @@ Obtener los grupos o roles de EntraId de los que es miembro un S*Service Princip
 ```powershell
 Get-MgServicePrincipalMemberOf -ServicePrincipalId <Id> | fl *
 ```
+
+## Az PowerShell
+Para conectarse
+```powershell
+Connect-AzAccount
+```
+Imprimir datos del contexto actual
+```powershell
+Get-AzContext
+```
+Listar todos los contextos disponibles
+```powershell
+Get-AzContext -ListAvailable
+```
