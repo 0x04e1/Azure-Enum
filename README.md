@@ -72,6 +72,7 @@ Listar los grupos que pertenecen a un usuario
 ```powershell
 Get-MgUserMemberOf -UserId <usuario@correo.com>
 ```
+## Grupos
 
 Listar grupos
 ```powershell
@@ -241,4 +242,54 @@ Get-AzContext
 Listar todos los contextos disponibles
 ```powershell
 Get-AzContext -ListAvailable
+```
+Enumerar las suscripciones a las cuales el usuario actual puede acceder
+```powershell
+Get-AzSubscription
+```
+Enumerar los recursos visbles para el usuario actual
+```powershell
+Get-AzResource
+```
+Enumerar todas las asignaciones de roles de Azure RBAC
+```powershell
+Get-AzRoleAssignment
+```
+
+## Usuarios
+Enumerar todos los usuarios
+```powershell
+Get-AzADUser
+```
+Detalles de un usuario específico
+```powershell
+Get-AzADUser -UserPrincipalName usuario@correo.com
+```
+Búsqueda de usuarios que contengan la palabra "admin"
+```powershell
+Get-AzADUser -SearchString "admin"
+```
+Buscar usuarios que contengan la palabra "admin" en su nombre:
+Get-AzADUser |?{$_.Displayname -match "admin"}
+
+## Grupos
+Listar los grupos
+```powershell
+Get-AzADGroup
+```
+Enumerar un grupo específico
+```powershell
+Get-AzADGroup -ObjectId 783a312d-0de2-4490-92e4-539b0e4ee03e
+```
+Listar los grupos que contengan la palabra 'admin'
+```powershell
+Get-AzADGroup -SearchString "admin" | fl *
+```
+Listar los grupos que contengan la palabra 'admin'
+```powershell
+Get-AzADGroup |?{$_.Displayname -match "admin"}
+```
+Listar los miembros de un grupo
+```powershell
+Get-AzADGroupMember -ObjectId <Id>
 ```
