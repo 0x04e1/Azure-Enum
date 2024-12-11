@@ -68,11 +68,19 @@ Enumerar los usuarios que solo pertenecen a EntraID
 Get-MgUser -All | ?{$_.OnPremisesSecurityIdentifier -eq $null}
 ```
 
+Listar los grupos que pertenecen a un usuario
+```powershell
+Get-MgUserMemberOf -UserId <usuario@correo.com>
+```
+
 Listar grupos
 ```powershell
 Get-MgGroup -All
 ```
-
+Listar los miembros de un grupo
+```powershell
+Get-MgGroupMember -GroupId <id>
+```
 Detalle de un grupo específico
 ```powershell
 Get-MgGroup -GroupId 000b652e-0aa1-1234-02i2-4412751abb6a
@@ -91,4 +99,58 @@ Get-MgGroup -ConsistencyLevel eventual -Search '"DisplayName:Admin"'
 Obtener solo los grupos de Microsoft 365 que tienen membresía dinámica
 ```powershell
 Get-MgGroup | ?{$_.GroupTypes -eq 'DynamicMembership'}
+```
+Enumerar los grupos que se sincronizan desde *Om-Premises*
+```powershell
+Get-MgGroup -All| ?{$_.OnPremisesSecurityIdentifier -ne $null}
+```
+
+Enumerar los grupos que solo pertenecen a EntraID
+```powershell
+Get-MgGroup -All | ?{$_.OnPremisesSecurityIdentifier -eq $null}
+```
+Obtener los grupos y roles, a los cuales pertenece un usuario
+```powershell
+(Get-MgUserMemberOf -UserId usuario@correo.com).AdditionalProperties
+```
+
+## Roles
+Listar las plantillas de los roles disponibles
+```powershell
+Get-MgDirectoryRoleTemplate
+```
+```powershell
+Get-MgDirectoryRoleTemplate | Where-Object {$_.DisplayName -eq "Global Administrator"}
+```
+Obtener el *RoleId* del rol "*Global Administrator*"
+```powershell
+$RoleId = (Get-MgDirectoryRole -Filter "DisplayName eq 'Global Administrator'").Id 
+```
+Obtener los miembros del rol "*Global Administrator*"
+```powershell
+(Get-MgDirectoryRoleMember -DirectoryRoleId $RoleId).AdditionalProperties
+```
+
+## Dispositivos
+Obtener todos los dispositivos registrados
+```powershell
+Get-MgDevice –All | fl *
+```
+Obtener los dispositivos dispositivos, exceptuando los obsoletos
+```powershell
+Get-MgDevice –All | ?{$_.ApproximateLastSignInDateTime -ne $null}
+```
+Obtener el dueño de los dispositivos registrados
+```powershell
+$Ids = (Get-MgDevice –All).Id; foreach($i in $Ids){ (Get-MgDeviceRegisteredOwner -DeviceId $i).AdditionalProperties}
+```
+```powershell
+$Ids = (Get-MgDevice –All).Id; foreach($i in $Ids){ (Get-MgDeviceRegisteredOwner -DeviceId $i).AdditionalProperties.userPrincipalName}
+```
+Lista de usuarios registrados de todos los dispositivos
+```powershell
+$Ids = (Get-MgDevice –All).Id; foreach($i in $Ids){ (Get-MgDeviceRegisteredUser -DeviceId $i).AdditionalProperties}
+```
+```powershell
+$Ids = (Get-MgDevice –All).Id; foreach($i in $Ids){ (Get-MgDeviceRegisteredUser -DeviceId $i).AdditionalProperties.userPrincipalName}
 ```
