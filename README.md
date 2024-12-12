@@ -2,6 +2,10 @@
 
 - [MicrosoftGraph](#Microsoft-Graph)
   - [Usuarios](#Usuarios)
+  - [Grupos](#Grupos)
+  - [Usuarios](#Roles)
+  - [Dispositivos](#Dispositivos)
+  - [Apps](#Apps)
 - [AzPowerShell](#Az-PowerShell)
 
 ### Microsoft Graph
@@ -63,7 +67,7 @@ Listar los grupos que pertenecen a un usuario
 ```powershell
 Get-MgUserMemberOf -UserId <usuario@correo.com>
 ```
-## Grupos
+### Grupos
 Listar grupos
 ```powershell
 Get-MgGroup -All
@@ -100,7 +104,7 @@ Obtener los grupos y roles, a los cuales pertenece un usuario
 ```powershell
 (Get-MgUserMemberOf -UserId usuario@correo.com).AdditionalProperties
 ```
-## Roles
+### Roles
 Listar las plantillas de los roles disponibles
 ```powershell
 Get-MgDirectoryRoleTemplate
@@ -116,7 +120,7 @@ Obtener los miembros del rol "*Global Administrator*"
 ```powershell
 (Get-MgDirectoryRoleMember -DirectoryRoleId $RoleId).AdditionalProperties
 ```
-## Dispositivos
+### Dispositivos
 Obtener todos los dispositivos registrados
 ```powershell
 Get-MgDevice –All | fl *
@@ -151,7 +155,7 @@ Listar los dispositivos registrados por un usuario.
 ```powershell
 (Get-MgUserRegisteredDevice -userId usuario@correo.com).AdditionalProperties
 ```
-## Apps
+### Apps
 
 Obtener todas las aplicaciones
 ```powershell
