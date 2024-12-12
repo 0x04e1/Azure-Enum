@@ -3,7 +3,7 @@
 - [MicrosoftGraph](#Microsoft-Graph)
   - [Usuarios](#Usuarios)
   - [Grupos](#Grupos)
-  - [Usuarios](#Roles)
+  - [Roles](#Roles)
   - [Dispositivos](#Dispositivos)
   - [Apps](#Apps)
 - [AzPowerShell](#Az-PowerShell)
