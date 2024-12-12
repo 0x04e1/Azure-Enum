@@ -1,6 +1,7 @@
 # Azure-Enum
 
 - [Microsoft Graph](#MicrosoftGraph)
+- [Az PowerShell](#AzPowerShell)
 
 ### Microsoft Graph
 Instalar el módulo Microsoft Graph
@@ -232,7 +233,7 @@ Obtener los grupos o roles de EntraId de los que es miembro un S*Service Princip
 Get-MgServicePrincipalMemberOf -ServicePrincipalId <Id> | fl *
 ```
 
-## Az PowerShell
+### Az PowerShell
 Para conectarse
 ```powershell
 Connect-AzAccount
