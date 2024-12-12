@@ -311,3 +311,66 @@ Obtener los *Service Principal* por nombre
 ```powershell
 Get-AzADServicePrincipal | ?{$_.DisplayName -match "app"}
 ```
+### Azure CLI
+Ingreso
+```powershell
+az login
+```
+```powershell
+az login -u usuario@correo.com -p Password1
+```
+Si el usuario NO tiene permisos en la suscripción
+```powershell
+az login -u usuario@correo.com -p Password1 --allow-no-subscriptions
+```
+
+Detalle del usuario actual
+```powershell
+az account tenant list
+```
+Detalle de la suscripción actual
+```powershell
+az account subscription list
+```
+Listar detalles del usuario que realizó el ingreso
+```powershell
+az ad signed-in-user show
+```
+
+### Usuarios
+Listar los usuarios de EntraID
+```powershell
+az ad user list --output table
+```
+```powershell
+az ad user list
+```
+```powershell
+az ad user list --query "[].[displayName]" -o table
+```
+```powershell
+az ad user list --query "[].[userPrincipalName,displayName]" --output table
+```
+```powershell
+az ad user list --query "[].{UPN:userPrincipalName, Name:displayName}" --output table
+```
+Enumerar detalles de un usuario particular
+```powershell
+az ad user show --id usuario@correo.com
+```
+Búsqueda de usuarios que contengan la palabra "admin" (*Case-sensitive*)
+```powershell
+az ad user list --query "[?contains(displayName,'admin')].displayName"
+```
+Búsqueda de usuarios que contengan la palabra "admin" (*Not case-sensitive*)
+```powershell
+az ad user list | ConvertFrom-Json | %{$_.displayName -match "admin"}
+```
+Usuarios sincronizados con *Om-Premises*
+```powershell
+az ad user list --query "[?onPremisesSecurityIdentifier!=null].displayName"
+```
+Usuarios que son de EntraID
+```powershell
+az ad user list --query "[?onPremisesSecurityIdentifier==null].displayName"
+```
