@@ -1,7 +1,7 @@
 # Azure-Enum
 
 - [MicrosoftGraph](#Microsoft-Graph)
-  - [Usuarios](#Usuarios)
+  - [Usuarios](#[1]Usuarios)
   - [Grupos](#Grupos)
   - [Roles](#Roles)
   - [Dispositivos](#Dispositivos)
@@ -31,7 +31,7 @@ Obtener información sobre la organización en Microsoft Graph
 ```powershell
 Get-MgOrganization | fl *
 ```
-### Usuarios
+### [1]Usuarios
 Listar todos los usuarios
 ```powershell
 Get-MgUser -All
