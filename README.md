@@ -7,6 +7,7 @@
   - [Dispositivos](#Dispositivos)
   - [Apps](#Apps)
 - [AzPowerShell](#Az-PowerShell)
+  - [Usuarios](#Usuarios)
 
 ### Microsoft Graph
 Instalar el módulo Microsoft Graph
@@ -243,8 +244,7 @@ Enumerar todas las asignaciones de roles de Azure RBAC
 ```powershell
 Get-AzRoleAssignment
 ```
-
-## Usuarios
+### Usuarios
 Enumerar todos los usuarios
 ```powershell
 Get-AzADUser
@@ -259,8 +259,7 @@ Get-AzADUser -SearchString "admin"
 ```
 Buscar usuarios que contengan la palabra "admin" en su nombre:
 Get-AzADUser |?{$_.Displayname -match "admin"}
-
-## Grupos
+### Grupos
 Listar los grupos
 ```powershell
 Get-AzADGroup
@@ -281,7 +280,7 @@ Listar los miembros de un grupo
 ```powershell
 Get-AzADGroupMember -ObjectId <Id>
 ```
-## App
+### Apps
 
 Obtener las aplicaciones registradas en el *Tenant* actual
 ```powershell
@@ -299,9 +298,7 @@ Obtiener todas las aplicaciones y filtra aquellas que tienen credenciales asocia
 ```powershell
 Get-AzADApplication | %{if(Get-AzADAppCredential -ObjectID $_.ID){$_}}
 ```
-
-## *Service Principals*
-
+### *Service Principals*
 Obtener los *Service Principal*
 ```powershell
 Get-AzADServicePrincipal
