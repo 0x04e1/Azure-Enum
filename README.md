@@ -1,6 +1,6 @@
 # Azure-Enum
 
-- [Microsoft Graph](#Microsoft Graph)
+- [Microsoft Graph](#MicrosoftGraph)
 
 ###Microsoft Graph
 Instalar el módulo Microsoft Graph
