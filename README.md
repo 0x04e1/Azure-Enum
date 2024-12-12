@@ -1,7 +1,7 @@
 # Azure-Enum
 
-- [MicrosoftGraph](#MicrosoftGraph)
-- [AzPowerShell](#AzPowerShell)
+- [MicrosoftGraph](#Microsoft-Graph)
+- [AzPowerShell](#Az-PowerShell)
 
 ### Microsoft Graph
 Instalar el módulo Microsoft Graph
