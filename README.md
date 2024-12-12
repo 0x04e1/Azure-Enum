@@ -374,3 +374,24 @@ Usuarios que son de EntraID
 ```powershell
 az ad user list --query "[?onPremisesSecurityIdentifier==null].displayName"
 ```
+### Grupos
+Listar grupos
+```powershell
+az ad group list
+az ad group list --query "[].[displayName]" -o table
+```
+Enumerar un grupo por nombre o por id
+```powershell
+az ad group show -g "VM Admins"
+```
+```powershell
+az ad group show -g 783a312d-0de2-4490-92e4-539b0e4ee03e
+```
+Buscar grupos que contienen la palabra "admin" en *Display name* (*case-sensitive*)
+```powershell
+az ad group list --query "[?contains(displayName,'admin')].displayName"
+```
+Búsqueda de usuarios que contengan la palabra "admin" (*Not case-sensitive*)
+```powershell
+az ad group list | ConvertFrom-Json | %{$_.displayName -match "admin"}
+```
