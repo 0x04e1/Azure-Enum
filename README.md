@@ -474,5 +474,5 @@ az ad sp list --all --query "[?passwordCredentials != null].displayName"
 Obtener los nombres de las aplicaciones que tienen configuradas claves o certificados.
 ```powershell
 az ad app list --query "[?keyCredentials != null].displayName" -o table
-```
 
+```
