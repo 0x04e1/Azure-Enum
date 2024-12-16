@@ -395,3 +395,84 @@ Búsqueda de usuarios que contengan la palabra "admin" (*Not case-sensitive*)
 ```powershell
 az ad group list | ConvertFrom-Json | %{$_.displayName -match "admin"}
 ```
+Enumerar los grupos que se sincronizan desde *Om-Premises*
+```powershell
+az ad group list --query "[?onPremisesSecurityIdentifier!=null].displayName"
+```
+Enumerar los grupos que solo pertenecen a EntraID
+```powershell
+az ad group list --query "[?onPremisesSecurityIdentifier==null].displayName"
+```
+Obtener miembros de un grupo
+```powershell
+az ad group member list -g "<GRUPO>" --query "[].[displayName]" -o table
+```
+Buscar si un usuario es miembro de un grupo
+```powershell
+az ad group member check --group "<GRUPO>" --member-id <Id>
+```
+### Apps
+Obtener todos los objetos de aplicación registrados en el *tenant*
+```powershell
+az ad app list
+az ad app list --query "[].{AppName: displayName, AppId: appId}" -o table
+```
+Obtener el detalle de una aplicación
+```powershell
+az ad app show --id
+```
+Obtener detalle de una aplicación que conincide con una palabra 'app'
+```powershell
+az ad app list --query "[?contains(displayName,'app')].displayName"
+```
+Búsqueda de usuarios que contengan la palabra "admin" (*not case-sensitive*)
+```powershell
+az ad app list | ConvertFrom-Json | %{$_.displayName -match "app"}
+```
+Buscar quién es el dueño de una aplicación
+```powershell
+az ad app owner list --id <Id>
+```
+Enumere todos los *Service Principal* con una contraseña de aplicación
+```powershell
+az ad app list --query "[?passwordCredentials !=null].displayName"
+```
+Listar las aplicaciones que tienen algún tipo de clave o certificado configurado para su autenticación
+```powershell
+az ad app list --query "[?keyCredentials !=null].displayName"
+```
+### AAD Service Principals
+
+Obtener los *Service Principals*
+```powershell
+az ad sp list --all --query "[].{Name: displayName, SPId: appId}" -o table
+```
+Obtener el detalle de un *Service Principals*
+```powershell
+az ad sp show --id <Id>
+```
+Obtener el *Service Principals* a través del nombre
+```powershell
+az ad sp list --all --query "[?contains(displayName,'app')].displayName"
+```
+Búsqueda de usuarios que contengan la palabra "app" (*not case-sensitive*)
+```powershell
+az ad sp list --all | ConvertFrom-Json | %{$_.displayName -match "app"}
+```
+Obtener el dueño de un *Service Principals*
+```powershell
+az ad sp owner list --id <Id> --query "[].[displayName]" -o table
+```
+Obtenber los *Service Principals* que pertenecen al usuario actual
+```powershell
+az ad sp list --show-mine
+```
+Enumere todos las aplicaciones con una contraseña de aplicación
+```powershell
+az ad sp list --all --query "[?passwordCredentials != null].displayName"
+```
+Obtener los nombres de las aplicaciones que tienen configuradas claves o certificados.
+```powershell
+az ad app list --query "[?keyCredentials != null].displayName" -o table
+```
+
