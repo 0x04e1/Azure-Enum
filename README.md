@@ -2,6 +2,7 @@
 
 - [MicrosoftGraph](#Microsoft-Graph)
 - [AzPowerShell](#Az-PowerShell)
+- [AzureCli](#Azure-CLI)
 
 ### Microsoft Graph
 Instalar el módulo Microsoft Graph
