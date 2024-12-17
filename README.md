@@ -1,7 +1,6 @@
 # Azure-Enum
 
 - [Enumeración](#Enumeración)
-   - [Grupo](#Grupo)
    - [MicrosoftGraph](#Microsoft-Graph)
    - [AzPowerShell](#Az-PowerShell)
    - [AzureCli](#Azure-CLI)
