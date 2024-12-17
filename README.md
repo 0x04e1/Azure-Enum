@@ -1,13 +1,10 @@
 # Azure-Enum
 
-
-- [IAM](#IAM)
-  - [Grupo](#Grupo)
-
 - [Enumeración](#Enumeración)
-  - [MicrosoftGraph](#Microsoft-Graph)
-  - [AzPowerShell](#Az-PowerShell)
-  - [AzureCli](#Azure-CLI)
+   - [Grupo](#Grupo)
+   - [MicrosoftGraph](#Microsoft-Graph)
+   - [AzPowerShell](#Az-PowerShell)
+   - [AzureCli](#Azure-CLI)
 
 ### Microsoft Graph
 Instalar el módulo Microsoft Graph
