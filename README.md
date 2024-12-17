@@ -8,6 +8,10 @@
   - [Apps](#Apps)
 - [AzPowerShell](#Az-PowerShell)
   - [Usuarios](#Usuarios)
+  - [Grupos](#Grupos)
+  - [Roles](#Roles)
+  - [Dispositivos](#Dispositivos)
+  - [Apps](#Apps)
 
 ### Microsoft Graph
 Instalar el módulo Microsoft Graph
