@@ -5,6 +5,7 @@
    - [AzPowerShell](#Az-PowerShell)
    - [AzureCli](#Azure-CLI)
 - [Tokens en Azure](#tokens-en-azure)
+   - [Az Powershell](#az-powershell)
 
 
 ### Microsoft Graph
@@ -473,7 +474,9 @@ Enumera todos los *service principals* que cuneten únicamente los nombres de aq
 ```powershell
 az ad app list --query "[?keyCredentials != null].displayName" -o table
 ```
-### Tokens en Azure
+## Tokens en Azure
+
+### Az Powershell
 
 ```powershell
 # Obtener token para AadGraph
