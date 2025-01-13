@@ -4,7 +4,7 @@
    - [MicrosoftGraph](#Microsoft-Graph)
    - [AzPowerShell](#Az-PowerShell)
    - [AzureCli](#Azure-CLI)
-
+- [Tokens en Azure](#tokens-en-azure)
 ### Microsoft Graph
 Instalar el módulo Microsoft Graph
 ```powershell****
@@ -471,7 +471,8 @@ Enumera todos los *service principals* que cuneten únicamente los nombres de aq
 ```powershell
 az ad app list --query "[?keyCredentials != null].displayName" -o table
 ```
-### Token en Azure
+### Tokens en Azure
+
 ```powershell
 # Obtener token para AadGraph
 $aadGraphToken = (Get-AzAccessToken -ResourceTypeName AadGraph).Token
