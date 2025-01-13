@@ -481,7 +481,7 @@ Es interesante conocer las principales APIs de Azure:
 
 | **API**                     | **Descripción**                                                                 |
 |-----------------------------|---------------------------------------------------------------------------------|
-| **Azure AD Graph API**      | Permite acceder y administrar identidades y recursos de Azure Active Directory. |
+| **Azure AD Graph API**      | Permite acceder y administrar identidades y recursos de Entra ID. |
 | **Azure Management API**    | Facilita la administración de recursos y servicios en Azure.                    |
 | **Azure Storage API**       | Proporciona acceso a servicios de almacenamiento como blobs, archivos y tablas. |
 | **Azure Key Vault API**     | Administra y protege secretos, certificados y claves privadas.                 |
