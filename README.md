@@ -5,7 +5,7 @@
    - [AzPowerShell](#Az-PowerShell)
    - [AzureCli](#Azure-CLI)
 - [Tokens en Azure](#tokens-en-azure)
-   - [Az Powershell](#az-powershell)
+   - [Az Powershell Token](#az-powershell-Token)
 
 
 ### Microsoft Graph
@@ -476,7 +476,7 @@ az ad app list --query "[?keyCredentials != null].displayName" -o table
 ```
 ## Tokens en Azure
 
-### Az Powershell
+### Az Powershell Token
 
 ```powershell
 # Obtener token para AadGraph
