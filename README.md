@@ -533,3 +533,34 @@ Es posible autenticarse en Azure y Microsoft Graph utilizando tokens de acceso e
 ```powershell
 Connect-AzAccount -AccountId usuario@correo.com -AccessToken eyJ0eXA... -MicrosoftGraphAccessToken eyJ0eXA...
 ```
+```powershell
+# Obtener token para aad-graph
+$aadGraphToken = az account get-access-token --resource=https://graph.windows.net/ --query accessToken --output tsv
+
+# Obtener token para arm
+$armToken = az account get-access-token --resource=https://management.azure.com/ --query accessToken --output tsv
+
+# Obtener token para batch
+$batchToken = az account get-access-token --resource=https://batch.core.windows.net/ --query accessToken --output tsv
+
+# Obtener token para data-lake
+$dataLakeToken = az account get-access-token --resource=https://datalake.azure.net/ --query accessToken --output tsv
+
+# Obtener token para media
+$mediaToken = az account get-access-token --resource=https://media.azure.net/ --query accessToken --output tsv
+
+# Obtener token para ms-graph
+$msGraphToken = az account get-access-token --resource=https://graph.microsoft.com/ --query accessToken --output tsv
+
+# Obtener token para oss-rdbms
+$ossRdbmsToken = az account get-access-token --resource=https://ossrdbms-aad.database.windows.net/ --query accessToken --output tsv
+
+# Mostrar los tokens obtenidos
+Write-Output "aad-graph Token: $aadGraphToken"
+Write-Output "arm Token: $armToken"
+Write-Output "batch Token: $batchToken"
+Write-Output "data-lake Token: $dataLakeToken"
+Write-Output "media Token: $mediaToken"
+Write-Output "ms-graph Token: $msGraphToken"
+Write-Output "oss-rdbms Token: $ossRdbmsToken"
+```
