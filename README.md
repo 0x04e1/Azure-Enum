@@ -6,6 +6,7 @@
    - [AzureCli](#Azure-CLI)
 - [Tokens en Azure](#tokens-en-azure)
    - [Az Powershell Token](#az-powershell-Token)
+   - [Az CLI Token](#az-cli-Token)
 
 
 ### Microsoft Graph
@@ -533,6 +534,7 @@ Es posible autenticarse en Azure y Microsoft Graph utilizando tokens de acceso e
 ```powershell
 Connect-AzAccount -AccountId usuario@correo.com -AccessToken eyJ0eXA... -MicrosoftGraphAccessToken eyJ0eXA...
 ```
+### Az CLI Token
 ```powershell
 # Obtener token para aad-graph
 $aadGraphToken = az account get-access-token --resource=https://graph.windows.net/ --query accessToken --output tsv
