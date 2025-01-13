@@ -524,3 +524,7 @@ Write-Output "ResourceManager Token: $resourceManagerToken"
 Write-Output "Storage Token: $storageToken"
 Write-Output "Synapse Token: $synapseToken"
 ```
+Es posible autenticarse en Azure y Microsoft Graph utilizando tokens de acceso en lugar de credenciales manuales.
+```powershell
+Connect-AzAccount -AccountId usuario@correo.com -AccessToken eyJ0eXA... -MicrosoftGraphAccessToken eyJ0eXA...
+```
