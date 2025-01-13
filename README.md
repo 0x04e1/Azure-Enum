@@ -467,8 +467,7 @@ Enumere todos las aplicaciones con una contraseña de aplicación
 ```powershell
 az ad sp list --all --query "[?passwordCredentials != null].displayName"
 ```
-Obtener los nombres de las aplicaciones que tienen configuradas claves o certificados.
+Enumera todos los *service principals* que cuneten únicamente los nombres de aquellos que tienen credenciales clave definidas.
 ```powershell
 az ad app list --query "[?keyCredentials != null].displayName" -o table
-
 ```
