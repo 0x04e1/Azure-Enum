@@ -7,7 +7,7 @@
 - [Tokens en Azure](#tokens-en-azure)
    - [Az Powershell Token](#az-powershell-Token)
    - [Az CLI Token](#az-cli-Token)
-   - [Uso de tokens con API ARM](#Uso-de-tokens-con-API-ARM)
+   - [Tokens API ARM](#tokens-api-arm)
 
 
 ### Microsoft Graph
@@ -583,4 +583,4 @@ Write-Output "media Token: $mediaToken"
 Write-Output "ms-graph Token: $msGraphToken"
 Write-Output "oss-rdbms Token: $ossRdbmsToken"
 ```
-## Uso de tokens con API - ARM
+## Tokens API ARM
