@@ -7,7 +7,7 @@
 - [Tokens en Azure](#tokens-en-azure)
    - [Az Powershell Token](#az-powershell-Token)
    - [Az CLI Token](#az-cli-Token)
-   - [Uso de tokens con API - ARM](#Uso-de-tokens-con-API-ARM)
+   - [Uso de tokens con API ARM](#Uso-de-tokens-con-API-ARM)
 
 
 ### Microsoft Graph
