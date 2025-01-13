@@ -477,6 +477,22 @@ az ad app list --query "[?keyCredentials != null].displayName" -o table
 ```
 ## Tokens en Azure
 
+Es interesante conocer las principales APIs de Azure:
+
+| **API**                     | **Descripción**                                                                 |
+|-----------------------------|---------------------------------------------------------------------------------|
+| **Azure AD Graph API**      | Permite acceder y administrar identidades y recursos de Azure Active Directory. |
+| **Azure Management API**    | Facilita la administración de recursos y servicios en Azure.                    |
+| **Azure Storage API**       | Proporciona acceso a servicios de almacenamiento como blobs, archivos y tablas. |
+| **Azure Key Vault API**     | Administra y protege secretos, certificados y claves privadas.                 |
+| **Azure Monitor API**       | Permite monitorear y analizar el rendimiento y la disponibilidad de aplicaciones.|
+| **Azure Cognitive Services API** | Ofrece capacidades de inteligencia artificial como reconocimiento de voz y análisis de imágenes. |
+| **Azure DevOps API**        | Facilita la integración y automatización de procesos de desarrollo y entrega.   |
+| **Azure Media Services API**| Gestiona y procesa contenido multimedia como videos y audio.                    |
+| **Azure IoT Hub API**       | Conecta y gestiona dispositivos IoT, permitiendo la comunicación bidireccional.|
+| **Azure Logic Apps API**    | Automatiza procesos de negocio mediante la creación de flujos de trabajo.      |
+| **Azure API Management**    | Administra y publica APIs de manera segura y escalable.                       |
+
 ### Az Powershell Token
 
 ```powershell
