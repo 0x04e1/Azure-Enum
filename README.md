@@ -471,3 +471,55 @@ Enumera todos los *service principals* que cuneten únicamente los nombres de aq
 ```powershell
 az ad app list --query "[?keyCredentials != null].displayName" -o table
 ```
+### Token en Azure
+```powershell
+# Obtener token para AadGraph
+$aadGraphToken = (Get-AzAccessToken -ResourceTypeName AadGraph).Token
+
+# Obtener token para AnalysisServices
+$analysisServicesToken = (Get-AzAccessToken -ResourceTypeName AnalysisServices).Token
+
+# Obtener token para Azure Resource Manager (Arm)
+$armToken = (Get-AzAccessToken -ResourceTypeName Arm).Token
+
+# Obtener token para Attestation
+$attestationToken = (Get-AzAccessToken -ResourceTypeName Attestation).Token
+
+# Obtener token para Batch
+$batchToken = (Get-AzAccessToken -ResourceTypeName Batch).Token
+
+# Obtener token para DataLake
+$dataLakeToken = (Get-AzAccessToken -ResourceTypeName DataLake).Token
+
+# Obtener token para KeyVault
+$keyVaultToken = (Get-AzAccessToken -ResourceTypeName KeyVault).Token
+
+# Obtener token para Microsoft Graph (MSGraph)
+$msGraphToken = (Get-AzAccessToken -ResourceTypeName MSGraph).Token
+
+# Obtener token para Operational Insights
+$operationalInsightsToken = (Get-AzAccessToken -ResourceTypeName OperationalInsights).Token
+
+# Obtener token para Resource Manager (ResourceManager)
+$resourceManagerToken = (Get-AzAccessToken -ResourceTypeName ResourceManager).Token
+
+# Obtener token para Storage
+$storageToken = (Get-AzAccessToken -ResourceTypeName Storage).Token
+
+# Obtener token para Synapse
+$synapseToken = (Get-AzAccessToken -ResourceTypeName Synapse).Token
+
+# Mostrar los tokens obtenidos
+Write-Output "AadGraph Token: $aadGraphToken"
+Write-Output "AnalysisServices Token: $analysisServicesToken"
+Write-Output "Arm Token: $armToken"
+Write-Output "Attestation Token: $attestationToken"
+Write-Output "Batch Token: $batchToken"
+Write-Output "DataLake Token: $dataLakeToken"
+Write-Output "KeyVault Token: $keyVaultToken"
+Write-Output "MSGraph Token: $msGraphToken"
+Write-Output "OperationalInsights Token: $operationalInsightsToken"
+Write-Output "ResourceManager Token: $resourceManagerToken"
+Write-Output "Storage Token: $storageToken"
+Write-Output "Synapse Token: $synapseToken"
+```
